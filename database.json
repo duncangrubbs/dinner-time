@@ -1,0 +1,12 @@
+{
+  "meals": [
+    {
+      "name": "Caesar Salad",
+      "season": "Summer",
+      "ingredients": [
+        "Lettuce",
+        "etc."
+      ]
+    }
+  ]
+}
