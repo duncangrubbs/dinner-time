@@ -3,6 +3,7 @@
     {
       "name": "Caesar Salad",
       "season": "Summer",
+      "time": 30,
       "ingredients": [
         "Lettuce",
         "etc."
