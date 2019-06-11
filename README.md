@@ -6,3 +6,4 @@
 - Query by label in DB
 - Get random meal
 - Suggested meals?
+- Generate Shopping List?
