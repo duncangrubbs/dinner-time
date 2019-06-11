@@ -14,7 +14,7 @@ import random
 # asian
 # american
 
-# this is just an on-going list, not for acutal use
+# this is just an on-going list, not for actual use
 ["Caesar Salad",
 "Fajitas",
 "Enchiladas",
@@ -38,24 +38,42 @@ def get_random_meal(meal_list):
 
 def get_meal_from_user():
   name = input("Name: ")
+  category = input("Category: ")
   season = input("Season: ")
   time = int(input("Est. Time: "))
+  ingredients = []
+  while True:
+    ingred = input("Ingredient: ")
+    if (ingred == 'done'):
+      break
+    ingredients.append(ingred)
   meal = {}
   meal['name'] = name
+  meal['category'] = category
   meal['season'] = season
   meal['time'] = time
-  meal['ingredients'] = []  
+  meal['ingredients'] = ingredients
   return meal
+
+def print_list(data):
+  '''Cleanly prints out a given list of meals'''
+  for entry in data:
+    print(entry['name'] + ' - ' + str(entry['time']) + ' mins')
+    print(entry['category'] + ', ' + entry['season'])
+    print()
 
 def run():
   print("Welcome to Dinner Time!")
-  print("Options:")
-  print("Query - q")
-  print("Write - w")
-  print("Help - h")
+  print("Add a meal:")
+  print()
+
+  meal = get_meal_from_user()
+
   db = DatabaseInterface()
   data = db.get_json_data('database.json')
-  print(data['meals'][0]['name'])
+  data['meals'].append(meal)
+  print_list(data['meals'])
+
+  db.write_json_data(data)
 
 run()
-

@@ -1,13 +1,1 @@
-{
-  "meals": [
-    {
-      "name": "Caesar Salad",
-      "season": "Summer",
-      "time": 30,
-      "ingredients": [
-        "Lettuce",
-        "etc."
-      ]
-    }
-  ]
-}
+{"meals": [{"name": "Caesar Salad", "category": "SALAD", "season": "SUMMER", "time": 30, "ingredients": ["Lettuce", "etc."]}, {"name": "Fajitas", "category": "MEXICAN", "season": "SUMMER", "time": 30, "ingredients": ["Lettuce", "etc."]}, {"name": "Ruben Sandwiches", "category": "AMERICAN", "season": "WINTER", "time": 45, "ingredients": ["Bread", "Meat", "Sour Krout", "Swiss Cheese"]}]}
