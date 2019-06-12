@@ -42,7 +42,8 @@ def get_meal_from_user():
   name = input("Name: ")
   category = input("Category: ")
   season = input("Season: ")
-  time = int(input("Est. Time: "))
+  location = input("Location: ")
+  time = int(input("Est. Time (mins): "))
   ingredients = []
   while True:
     ingred = input("Ingredient: ")
@@ -53,29 +54,67 @@ def get_meal_from_user():
   meal['name'] = name
   meal['category'] = category
   meal['season'] = season
+  meal['location'] = location
   meal['time'] = time
   meal['ingredients'] = ingredients
   return meal
 
+def print_meal(meal):
+  '''Prints out a single meal cleary'''
+  print()
+  print(meal['name'] + ' - ' + str(meal['time']) + ' mins')
+  print(meal['category'] + ', ' + meal['season'])
+  print("Find in: " + meal['location'])
+  print("Ingredients:")
+  for ingred in meal['ingredients']:
+    print(ingred)
+  print()
+
 def print_list(data):
   '''Cleanly prints out a given list of meals'''
   for entry in data:
-    print(entry['name'] + ' - ' + str(entry['time']) + ' mins')
-    print(entry['category'] + ', ' + entry['season'])
-    print()
+    print_meal(entry)
+
+def query(query_string, meals):
+  results = []
+  for meal in meals:
+    if meal['category'] == query_string:
+      results.append(meal)
+  return results
+
+def repl():
+  '''Main REPL loop for the program'''
+  while True:
+    data = DatabaseInterface.get_json_data('database.json')
+    user_input = input("Option: ")
+    if (user_input == 'exit'):
+      return
+    if (user_input == 'l'):
+      print_list(data['meals'])
+    elif (user_input == 'q'):
+      query_input = input("Query: ")
+      result = query(query_string=query_input, meals=data['meals'])
+      print_list(result)
+    elif (user_input == 'a'):
+      meal = get_meal_from_user()
+      data['meals'].append(meal)
+
+      DatabaseInterface.write_json_data(data)
+      print("Added Meal:")
+      print_meal(meal)
+    elif (user_input == 'r'):
+      meal = get_random_meal(data['meals'])
+      print_meal(meal)
 
 def run():
   print("Welcome to Dinner Time!")
-  print("Add a meal:")
+  print("exit - to exit")
+  print("l - to list meals in DB")
+  print("q - to query")
+  print("a - to add a meal")
+  print("r - for random meal")
   print()
 
-  meal = get_meal_from_user()
-
-  db = DatabaseInterface()
-  data = db.get_json_data('database.json')
-  data['meals'].append(meal)
-  print_list(data['meals'])
-
-  db.write_json_data(data)
+  repl()
 
 run()
