@@ -1,1 +1,68 @@
-{"meals": [{"name": "Spaghetti", "category": "PASTA", "season": "WINTER", "location": "None", "time": 30, "ingredients": ["Pasta", "Red sauce"]}, {"name": "Fajitas", "category": "MEXICAN", "season": "SUMMER", "location": "None", "time": 60, "ingredients": ["Chicken", "Steak", "Peppers", "Onions", "Tortillas", "Avocado", "Hot sauce"]}, {"name": "Tacos", "category": "MEXICAN", "season": "ANY", "location": "N/A", "time": 10, "ingredients": ["Ground Turkey", "Corn Tortillas", "Seasoning", "Cheese", "Avocado", "Salsa", "Hot Sauce"]}]}
+{  
+  "meals":[  
+    {  
+      "name":"Salad Nicoise",
+      "category":"SALAD",
+      "season":"SUMMER",
+      "location":"N/A",
+      "time":35,
+      "ingredients":[  
+        "Tuna",
+        "Mixed Greens",
+        "Potato",
+        "Green Beans",
+        "Olives",
+        "Bell Pepper",
+        "Salad Dressing"
+      ],
+      "last_suggested":0,
+      "tags":[  
+        "easy",
+        "healthy"
+      ],
+      "id":0
+    },
+    {  
+      "name":"Ruben Sandwiches",
+      "category":"AMERICAN",
+      "season":"WINTER",
+      "location":"N/A",
+      "time":40,
+      "ingredients":[  
+        "Rye Bread",
+        "Pickles",
+        "Ketchup",
+        "Mayo",
+        "Sauerkraut",
+        "Swiss Cheese",
+        "Pastrami"
+      ],
+      "last_suggested":0,
+      "tags":[  
+        "hearty",
+        "easy"
+      ],
+      "id":1
+    },
+    {  
+      "name":"Thai Turkey Sliders",
+      "category":"ASIAN",
+      "season":"FALL",
+      "location":"N/A",
+      "time":50,
+      "ingredients":[  
+        "Ground Turkey",
+        "Peanut Butter",
+        "Fish Sauce",
+        "Cucumbers",
+        "Vinegar",
+        "Burger Buns"
+      ],
+      "last_suggested":0,
+      "tags":[  
+
+      ],
+      "id":2
+    }
+  ]
+}

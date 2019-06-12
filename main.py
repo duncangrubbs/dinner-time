@@ -1,19 +1,6 @@
 from Database import DatabaseInterface
 import random
 
-# we would have labels for each meal, possibly ingredients
-# these could be tags like: summer, hearty, quick, fancy, etc.
-# and then when we wanted to find something, we could use those,
-# or just get a random one
-
-# CATEGORIES:
-# salads
-# pan meals? (enchiladas, etc.)
-# mexican
-# italian
-# asian
-# american
-
 # this is just an on-going list, not for actual use
 ["Caesar Salad",
 "Fajitas",
@@ -45,11 +32,18 @@ def get_meal_from_user():
   location = input("Location: ")
   time = int(input("Est. Time (mins): "))
   ingredients = []
+  tags = []
+  print("Type 'done' when done")
   while True:
     ingred = input("Ingredient: ")
     if (ingred == 'done'):
       break
     ingredients.append(ingred)
+  while True:
+    tag = input("Tag: ")
+    if (tag == 'done'):
+      break
+    tags.append(tag)
   meal = {}
   meal['name'] = name
   meal['category'] = category
@@ -57,14 +51,15 @@ def get_meal_from_user():
   meal['location'] = location
   meal['time'] = time
   meal['ingredients'] = ingredients
+  meal['last_suggested'] = 0
+  meal['tags'] = tags
   return meal
 
 def print_meal(meal):
   '''Prints out a single meal cleary'''
-  print()
   print(meal['name'] + ' - ' + str(meal['time']) + ' mins')
   print(meal['category'] + ', ' + meal['season'])
-  print("Find in: " + meal['location'])
+  print("Find recipe in: " + meal['location'])
   print("Ingredients:")
   for ingred in meal['ingredients']:
     print(ingred)
@@ -72,8 +67,11 @@ def print_meal(meal):
 
 def print_list(data):
   '''Cleanly prints out a given list of meals'''
+  i = 0
   for entry in data:
+    print(str(i) + ":")
     print_meal(entry)
+    i += 1
 
 def query(query_string, meals):
   results = []
@@ -87,6 +85,7 @@ def repl():
   while True:
     data = DatabaseInterface.get_json_data('database.json')
     user_input = input("Option: ")
+    print()
     if (user_input == 'exit'):
       return
     if (user_input == 'l'):
@@ -97,9 +96,11 @@ def repl():
       print_list(result)
     elif (user_input == 'a'):
       meal = get_meal_from_user()
+      meal['id'] = len(data['meals'])
       data['meals'].append(meal)
 
       DatabaseInterface.write_json_data(data)
+      print()
       print("Added Meal:")
       print_meal(meal)
     elif (user_input == 'r'):
