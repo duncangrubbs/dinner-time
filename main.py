@@ -1,5 +1,7 @@
-from Database import DatabaseInterface
 import random
+import datetime
+
+from Database import DatabaseInterface
 
 # this is just an on-going list, not for actual use
 ["Caesar Salad",
@@ -19,9 +21,48 @@ import random
 "Twice Baked Potatoes",
 "Kung Pao Chicken"]
 
+class Query:
+  def query_season(query_string: str, meals: list) -> list:
+    results = []
+    for meal in meals:
+      if meal['season'] == query_string:
+        results.append(meal)
+    return results
+
+  def query_category(query_string: str, meals: list) -> list:
+    results = []
+    for meal in meals:
+      if meal['category'] == query_string:
+        results.append(meal)
+    return results
+
+class Recommender:
+  def __init__(self, *args, **kwargs):
+    return super().__init__(*args, **kwargs)
+
+  def get_season(self, month):
+    '''Returns the season string from the current month'''
+    if (month >= 6 and month <= 8):
+      return 'SUMMER'
+    elif (month >= 9 and month <= 10):
+      return 'FALL'
+    elif (month >= 3 and month <= 5):
+      return 'SPRING'
+    elif (month >= 11 or month < 3):
+      return 'WINTER'
+  
+  def recommendation(self, data):
+    '''Returns a random meal from a current season query'''
+    now = datetime.datetime.now()
+    season = self.get_season(now.month)
+    list_season = Query.query_season(season, data)
+    if (len(list_season) == 0):
+      return None
+    return get_random_meal(list_season)
+
 def get_random_meal(meal_list):
   '''Returns random meal object from a list'''
-  index = random.randint(1, len(meal_list) - 1)
+  index = 0 if len(meal_list) == 1 else random.randint(1, len(meal_list) - 1)
   return meal_list[index]
 
 def get_meal_from_user():
@@ -73,13 +114,6 @@ def print_list(data):
     print_meal(entry)
     i += 1
 
-def query(query_string, meals):
-  results = []
-  for meal in meals:
-    if meal['category'] == query_string:
-      results.append(meal)
-  return results
-
 def repl():
   '''Main REPL loop for the program'''
   while True:
@@ -92,7 +126,7 @@ def repl():
       print_list(data['meals'])
     elif (user_input == 'q'):
       query_input = input("Query: ")
-      result = query(query_string=query_input, meals=data['meals'])
+      result = Query.query_category(query_input, data['meals'])
       print_list(result)
     elif (user_input == 'a'):
       meal = get_meal_from_user()
@@ -106,6 +140,10 @@ def repl():
     elif (user_input == 'r'):
       meal = get_random_meal(data['meals'])
       print_meal(meal)
+    elif (user_input == 'rr'):
+      r = Recommender()
+      meal = r.recommendation(data['meals'])
+      print_meal(meal)
 
 def run():
   print("Welcome to Dinner Time!")
@@ -114,6 +152,7 @@ def run():
   print("q - to query")
   print("a - to add a meal")
   print("r - for random meal")
+  print("rr - for recommended meal")
   print()
 
   repl()
