@@ -3,7 +3,7 @@ class Query:
     '''Returns a list of meals for the given season query string'''
     results = []
     for meal in meals:
-      if meal['season'] == query_string:
+      if meal['season'].lower() == query_string.lower():
         results.append(meal)
     return results
 
@@ -11,6 +11,6 @@ class Query:
     '''Returns a list of meals for the given catergory query string'''
     results = []
     for meal in meals:
-      if meal['category'] == query_string:
+      if meal['category'].lower() == query_string.lower():
         results.append(meal)
     return results

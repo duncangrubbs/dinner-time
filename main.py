@@ -54,9 +54,8 @@ def print_list(meal_list: list):
 
 def repl():
   '''Main REPL loop for the program'''
-  self = 0
   while True:
-    data = DatabaseInterface.get_json_data(self, 'database.json')
+    data = DatabaseInterface.get_json_data(DatabaseInterface, 'database.json')
     user_input = input("Option: ")
     print()
     if (user_input == 'exit'):
@@ -65,19 +64,21 @@ def repl():
       print_list(data['meals'])
     elif (user_input == 'q'):
       query_input = input("Query: ")
-      result = Query.query_category(self, query_input, data['meals'])
-      print_list(result)
+      r_category = Query.query_category(Query, query_input, data['meals'])
+      r_season = Query.query_season(Query, query_input, data['meals'])
+      
+      print_list((r_season + r_category))
     elif (user_input == 'a'):
       meal = get_meal_from_user()
       meal['id'] = len(data['meals'])
       data['meals'].append(meal)
 
-      DatabaseInterface.write_json_data(self, data)
+      DatabaseInterface.write_json_data(DatabaseInterface, data)
       print()
       print("Added Meal:")
       print_meal(meal)
     elif (user_input == 'r'):
-      meal = RandomMeal.get_random_meal(self, data['meals'])
+      meal = RandomMeal.get_random_meal(RandomMeal, data['meals'])
       print_meal(meal)
     elif (user_input == 'rr'):
       r = Recommender()
