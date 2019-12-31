@@ -1,12 +1,22 @@
-# dinner-time
-> A resource for helping find meals to cook for dinner 🍽.
+# 🍽 dinner-time
+> A resource for helping find meals to cook for dinner
 
-## Features:
-- Add to databse
+--- 
+## Current Features:
+- Add to database
 - Query by label in DB
 - Get random meal
-- Suggested meals?
-- Generate Shopping List?
+
+## Future Features:
+- Suggested meals
+- Generate Shopping List
+
+---
+
+## Stack
+1. Python 3
+2. Flask
+3. JSON
 
 ## Meal Object Spec
 - ingredients: Array: String
@@ -33,3 +43,10 @@
 
 ## Sample Tags:
 - __hearty, quick, easy, fancy, healthy, staple__
+
+## API Reference
+- `POST /api/meals/add`
+- `GET /api/meals/all`
+- `GET /api/meals/:query`
+- `GET /api/meals/recommended`
+- `GET /api/meals/random`
