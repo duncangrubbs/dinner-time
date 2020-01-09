@@ -8,13 +8,14 @@
 - Get random meal
 
 ## Future Features:
+- REST API Support
 - Suggested meals
 - Generate Shopping List
 
 ---
 
 ## Stack
-1. Python 3
+1. Python 3.8.0
 2. Flask
 3. JSON
 
