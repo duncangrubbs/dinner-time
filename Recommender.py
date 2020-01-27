@@ -25,4 +25,4 @@ class Recommender:
     list_season = Query.query_season(self, season, data)
     if (len(list_season) == 0):
       return None
-    return RandomMeal.get_random_meal(self, list_season)
+    return RandomMeal.get_random_meal(list_season)

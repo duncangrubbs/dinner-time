@@ -7,10 +7,11 @@
 - Query by label in DB
 - Get random meal
 
-## Future Features:
-- REST API Support
-- Suggested meals
-- Generate Shopping List
+## Future Features/TODO:
+[] REST API Support
+[] Better Suggested meals
+[] Generate Shopping List
+[] Update time last suggested
 
 ---
 

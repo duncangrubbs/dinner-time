@@ -78,7 +78,7 @@ def repl():
       print("Added Meal:")
       print_meal(meal)
     elif (user_input == 'r'):
-      meal = RandomMeal.get_random_meal(RandomMeal, data['meals'])
+      meal = RandomMeal.get_random_meal(data['meals'])
       print_meal(meal)
     elif (user_input == 'rr'):
       r = Recommender()
