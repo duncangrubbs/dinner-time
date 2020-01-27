@@ -5,7 +5,6 @@ from RandomMeal import RandomMeal
 app = Flask(__name__)
 
 # API endpoints
-
 @app.route('/api/meals/add', methods=['POST'])
 def add_meal():
   meal = request.get_json()
