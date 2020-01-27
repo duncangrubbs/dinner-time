@@ -8,10 +8,10 @@
 - Get random meal
 
 ## Future Features/TODO:
-[] REST API Support
-[] Better Suggested meals
-[] Generate Shopping List
-[] Update time last suggested
+- [ ] REST API Support
+- [ ] Better Suggested meals
+- [ ] Generate Shopping List
+- [ ] Update time last suggested
 
 ---
 
