@@ -41,8 +41,7 @@ class CLI(object):
     def repl():
         '''Main REPL loop for the CLI'''
         while True:
-            data = DatabaseInterface.get_json_data(
-                DatabaseInterface, 'database.json')
+            data = DatabaseInterface.get_json_data()
             user_input = input("Option: ")
             print()
             if (user_input == 'exit'):
@@ -62,7 +61,7 @@ class CLI(object):
                 meal['id'] = len(data['meals'])
                 data['meals'].append(meal)
 
-                DatabaseInterface.write_json_data(DatabaseInterface, data)
+                DatabaseInterface.write_json_data(data)
                 print()
                 print("Added Meal:")
                 print_meal(meal)

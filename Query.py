@@ -1,4 +1,4 @@
-class Query:
+class Query(object):
     def query_season(self, query_string: str, meals: list) -> list:
         '''Returns a list of meals for the given season query string'''
         results = []
