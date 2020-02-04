@@ -4,13 +4,15 @@
 --- 
 ## Current Features:
 - Add to database
-- Query by label in DB
+- Query by SEASON or CATEGORY in DB
 - Get random meal
+- Get recommended meal (not a great algorithm as of now)
 
 ## Future Features/TODO:
 - [ ] REST API Support
-- [ ] Better Suggested meals
+- [ ] Better Suggested meals (use AI)
 - [ ] Generate Shopping List
+- [ ] Support real DB system
 - [ ] Update time last suggested
 
 ---
@@ -49,6 +51,7 @@
 ## API Reference
 - `POST /api/meals/add`
 - `GET /api/meals/all`
-- `GET /api/meals/:query`
+- `GET /api/meals?season=SEASON`
+- `GET /api/meals?category=CATEGORY`
 - `GET /api/meals/recommended`
 - `GET /api/meals/random`
