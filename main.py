@@ -1,6 +1,6 @@
 import sys
-from cli import CLI
-import api as API
+from cli.cli import CLI
+from api import api as API
 
 if __name__ == '__main__':
     if (len(sys.argv) != 1):

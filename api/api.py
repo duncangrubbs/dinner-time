@@ -5,11 +5,16 @@ from Recommender import Recommender
 from Query import Query
 
 def validate_meal(meal):
-    assert meal['ingredients'] != None
-    assert meal['time'] != None
-    assert meal['season'] != None
-    assert meal['category'] != None
-    assert meal['name'] != None
+    if meal['ingredients'] == None:
+        return False
+    if meal['time'] == None:
+        return False
+    if meal['season'] == None:
+        return False
+    if meal['category'] == None:
+        return False
+    if meal['name'] == None:
+        return False
 
 app = Flask(__name__)
 
@@ -20,15 +25,17 @@ def add_meal():
     all_meals = DatabaseInterface.get_json_data()
 
     # validate and clean our meal
-    validate_meal(meal)
-    meal['last_suggested'] = 0
-    meal['id'] = len(all_meals['meals'])
-    
-    # append to list and write-back data
-    all_meals['meals'].append(meal)
-    DatabaseInterface.write_json_data(all_meals)
+    if validate_meal(meal):
 
-    return meal, 200
+        meal['last_suggested'] = 0
+        meal['id'] = len(all_meals['meals'])
+        
+        # append to list and write-back data
+        all_meals['meals'].append(meal)
+        DatabaseInterface.write_json_data(all_meals)
+
+        return meal, 200
+    return 'Bad Data', 400
 
 @app.route('/api/meals/all', methods=['GET'])
 def get_meals():
