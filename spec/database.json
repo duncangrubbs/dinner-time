@@ -1,0 +1,25 @@
+{
+    "category": [
+        "SALAD",
+        "PAN/BULK",
+        "MEXICAN",
+        "ITALIAN",
+        "SOUP",
+        "ASIAN",
+        "AMERICAN"
+     ],
+     "season": [
+         "WINTER",
+         "SPRING",
+         "SUMMER",
+         "FALL"
+     ],
+     "tags": [
+         "hearty",
+         "quick",
+         "easy",
+         "fancy",
+         "healthy",
+         "staple"
+     ]
+}

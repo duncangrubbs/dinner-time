@@ -3,7 +3,6 @@ from Query import Query
 from Recommender import Recommender
 from util import print_list, print_meal, get_random_meal
 
-
 class CLI(object):
     @staticmethod
     def get_meal_from_user() -> object:
@@ -12,9 +11,12 @@ class CLI(object):
         category = input("Category: ")
         season = input("Season: ")
         location = input("Location: ")
-        time = int(input("Est. Time (mins): "))
+        time = input("Cook Time: ")
+
         ingredients = []
         tags = []
+
+        print('Ingredients and Tags')
         print("Type 'done' when done")
         while True:
             ingred = input("Ingredient: ")
@@ -26,6 +28,7 @@ class CLI(object):
             if (tag == 'done'):
                 break
             tags.append(tag)
+
         meal = {}
         meal['name'] = name
         meal['category'] = category
@@ -36,6 +39,27 @@ class CLI(object):
         meal['last_suggested'] = 0
         meal['tags'] = tags
         return meal
+
+    @staticmethod
+    def user_query(data):
+        query_input = input("Query: ")
+        r_category = Query.query_category(
+            Query, query_input, data['meals'])
+        r_season = Query.query_season(
+            Query, query_input, data['meals'])
+
+        print_list((r_season + r_category))
+
+    @staticmethod
+    def user_add(data):
+        meal = CLI.get_meal_from_user()
+        meal['id'] = len(data['meals'])
+        data['meals'].append(meal)
+
+        DatabaseInterface.write_json_data(data)
+        print()
+        print("Added Meal:")
+        print_meal(meal) 
 
     @staticmethod
     def repl():
@@ -49,29 +73,19 @@ class CLI(object):
             if (user_input == 'l'):
                 print_list(data['meals'])
             elif (user_input == 'q'):
-                query_input = input("Query: ")
-                r_category = Query.query_category(
-                    Query, query_input, data['meals'])
-                r_season = Query.query_season(
-                    Query, query_input, data['meals'])
-
-                print_list((r_season + r_category))
+                CLI.user_query(data)
             elif (user_input == 'a'):
-                meal = get_meal_from_user()
-                meal['id'] = len(data['meals'])
-                data['meals'].append(meal)
-
-                DatabaseInterface.write_json_data(data)
-                print()
-                print("Added Meal:")
-                print_meal(meal)
+                CLI.user_add(data)
             elif (user_input == 'r'):
                 meal = get_random_meal(data['meals'])
                 print_meal(meal)
             elif (user_input == 'rr'):
                 r = Recommender()
                 meal = r.recommendation(data['meals'])
+                print(meal)
                 print_meal(meal)
+            else:
+                print('Invalid Command....')
 
     @staticmethod
     def run():

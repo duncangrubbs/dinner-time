@@ -3,7 +3,6 @@ import datetime
 from Query import Query
 from util import get_random_meal
 
-
 class Recommender:
     def __init__(self, *args, **kwargs):
         return super().__init__(*args, **kwargs)
@@ -26,5 +25,5 @@ class Recommender:
 
         meals_of_season = Query.query_season(self, current_season, meal_list)
         if (len(meals_of_season) == 0):
-            return None
+            return get_random_meal(meal_list)
         return get_random_meal(meals_of_season)
