@@ -35,43 +35,51 @@
 - location: String
 
 ### Region Specification
-- __AMERICAN__
-- __ASIAN__
-- __ITALIAN__
-- __MEXICAN__
-- __INDIAN__
+- AMERICAN
+- THAI
+- CHINESE
+- ASIAN
+- JAPANESE
+- KOREAN
+- FRENCH
+- GERMAN
+- MIDDLE EASTERN
+- ITALIAN
+- MEXICAN
+- INDIAN
 
 ### Main Ingredient Specification
-- __CHICKEN__
-- __BEEF__
-- __PORK__
-- __TURKEY__
-- __BEANS__
-- __TOMATOES__
-- __FISH__
-- __PASTA__
+- CHICKEN
+- BEEF
+- PORK
+- TURKEY
+- BEANS
+- TOMATOES
+- FISH
+- PASTA
+- TOFU
 
 ### Specialty Specification
-- __SOUP__
-- __SALAD__
+- SOUP
+- SALAD
 
 ### Season Specification
-- __WINTER__
-- __SPRING__
-- __SUMMER__
-- __FALL__
+- WINTER
+- SPRING
+- SUMMER
+- FALL
 
 ### Time Specification
-- __EASY__
-- __MODERATE__
-- __ELABORATE__
+- EASY
+- MODERATE
+- ELABORATE
 
 ### Tags Specification
-- __hearty__
-- __fancy__
-- __healthy__
-- __staple__
-- __vegetarian__
+- hearty
+- fancy
+- healthy
+- staple
+- vegetarian
 
 ## API Reference
 - `POST /api/meals/add`

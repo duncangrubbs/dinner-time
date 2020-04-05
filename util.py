@@ -2,8 +2,8 @@ import random
 
 def print_meal(meal: object):
     '''Prints out a single meal cleary'''
-    print(meal['name'] + ' - ' + str(meal['time']) + ' mins')
-    print(meal['category'] + ', ' + meal['season'])
+    print(meal['name'] + ' - ' + str(meal['time']))
+    print(meal['region'] + ', ' + meal['season'])
     print("Find recipe in: " + meal['location'])
     print("Ingredients:")
     for ingred in meal['ingredients']:
@@ -12,6 +12,8 @@ def print_meal(meal: object):
 
 def print_list(meal_list: list):
     '''Cleanly prints out a given list of meals'''
+    # by default put most recently suggested on the bottom
+    meal_list.sort(key=lambda x: x['last_suggested'], reverse=True)
     i = 0
     for entry in meal_list:
         print(str(i) + ":")
