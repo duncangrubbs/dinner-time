@@ -1,11 +1,11 @@
-# 🍽 dinner-time
+# 🍽 Dinner Time
 > A resource for helping find meals to cook for dinner
 
 --- 
 ## 🙌Current Features:
 - Add to database
-- Query by SEASON or CATEGORY in DB
-- Get random meal
+- Query by all specs
+- Get a random meal
 - Get recommended meal (not a great algorithm as of now)
 
 ## 📓Future Features/TODO:

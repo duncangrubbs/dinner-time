@@ -52,22 +52,22 @@ class CLI(object):
         result = []
         for q in queries:
             res = []
-            res +=  Query.query_region(
+            res += Query.query_region(
             Query, q, data['meals'])
-            res +=  Query.query_main_ingredient(
+            res += Query.query_main_ingredient(
             Query, q, data['meals'])
-            res +=  Query.query_specialty(
+            res += Query.query_specialty(
             Query, q, data['meals'])
-            res +=  Query.query_time(
+            res += Query.query_time(
             Query, q, data['meals'])
-            res +=  Query.query_tags(
+            res += Query.query_tags(
             Query, q, data['meals'])
-            res +=  Query.query_season(
+            res += Query.query_season(
             Query, q, data['meals'])
 
             result += res
 
-        print_list(list(set(result)))
+        print_list(result)
 
     @staticmethod
     def user_add(data):
