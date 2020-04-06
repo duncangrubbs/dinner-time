@@ -1,0 +1,49 @@
+{
+    "region": [
+        "AMERICAN",
+        "THAI",
+        "CHINESE",
+        "ASIAN",
+        "JAPANESE",
+        "KOREAN",
+        "FRENCH",
+        "GERMAN",
+        "MIDDLE EASTERN",
+        "ITALIAN",
+        "MEXICAN",
+        "INDIAN"
+     ],
+     "season": [
+        "WINTER",
+        "SPRING",
+        "SUMMER",
+        "FALL"
+     ],
+     "specialty": [
+        "SOUP",
+        "SALAD"
+     ],
+     "main_ingredient": [
+        "CHICKEN",
+        "BEEF",
+        "PORK",
+        "TURKEY",
+        "BEANS",
+        "TOMATOES",
+        "FISH",
+        "PASTA",
+        "TOFU"
+     ],
+     "time": [
+        "EASY",
+        "MODERATE",
+        "ELABORATE"
+     ],
+     "tags": [
+        "hearty",
+        "fancy",
+        "healthy",
+        "staple",
+        "vegetarian"
+     ]
+}

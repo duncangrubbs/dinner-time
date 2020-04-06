@@ -1,28 +1,25 @@
-# 🍽 Dinner Time
-> A resource for helping find meals to cook for dinner
+# Dinner Time 🥖
+> A resource for helping find meals to cook for dinner _(or really any meal)_
 
---- 
-## 🙌Current Features:
+## 🙌 Current Features:
 - Add to database
 - Query by all specs
 - Get a random meal
 - Get recommended meal (not a great algorithm as of now)
+- REST API for most routes
 
-## 📓Future Features/TODO:
-- [ ] REST API Support
-- [ ] Better Suggested meals (use AI)
+## 📓 Future Features/TODO:
+- [ ] Better Suggested meals _(using AI?)_
 - [ ] Generate Shopping List
-- [ ] Support real DB system
+- [ ] Support real database system
 - [ ] Update time last suggested
 
----
-
-##  🔨Stack
+##  🔨 Stack
 1. Python 3.8.0
 2. Flask
 3. JSON
 
-## 🖋Specifications
+## 🖋 Specifications
 
 ### Meal Object Specification
 - tags: Array: String
