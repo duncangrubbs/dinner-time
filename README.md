@@ -1,4 +1,4 @@
-# Dinner Time 🥖
+# 🥖 Dinner Time
 > A resource for helping find meals to cook for dinner _(or really any meal)_
 
 ## 🙌 Current Features:
