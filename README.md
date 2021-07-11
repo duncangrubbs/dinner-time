@@ -1,87 +1,20 @@
-# 🥖 Dinner Time
+# Dinner Time
 > A resource for helping find meals to cook for dinner _(or really any meal)_
 
-## 🙌 Current Features:
-- Add to database
-- Query by all specs
-- Get a random meal
-- Get recommended meal (not a great algorithm as of now)
-- REST API for most routes
+Dinner Time is a recipe storage and retrieval API made to make meal planning easier. I am currently overhauling the implementation so it is a major work in progress. The inspiration for creating it came from my family's weekly ritual of trying to figure out what meals to cook each night of the week and what ingredients we would need for each of them. This whole process takes a long time, and so I figured why not automate the whole thing.
 
-## 📓 Future Features/TODO:
-- [ ] Better Suggested meals _(using AI?)_
-- [ ] Generate Shopping List
-- [ ] Support real database system
-- [ ] Update time last suggested
+## 🙌 Planned Features
+- Add meals to a database
+- Get specific meal recomendations or query for one meal at a time
+- Get a smanu hopping list for the next X days
+- Smart recommendation and menu creation using data about each recipe
 
 ##  🔨 Stack
-1. Python 3.8.0
-2. Flask
-3. JSON
+- Python 3.8.0+
+- Flask
+- PostgreSQL
+- Heroku
+- Github
 
-## 🖋 Specifications
+You can take a look at the [API Docs](https://github.com/duncangrubbs/dinner-time/blob/master/docs/api.md) as well as the [Meal object specification](https://github.com/duncangrubbs/dinner-time/blob/master/docs/spec.md). Contributions are always welcome!
 
-### Meal Object Specification
-- tags: Array: String
-- time: String
-- id: Integer
-- last_suggested: Integer
-- name: String
-- category: String
-- season: String
-- location: String
-
-### Region Specification
-- AMERICAN
-- THAI
-- CHINESE
-- ASIAN
-- JAPANESE
-- KOREAN
-- FRENCH
-- GERMAN
-- MIDDLE EASTERN
-- ITALIAN
-- MEXICAN
-- INDIAN
-
-### Main Ingredient Specification
-- CHICKEN
-- BEEF
-- PORK
-- TURKEY
-- BEANS
-- TOMATOES
-- FISH
-- PASTA
-- TOFU
-
-### Specialty Specification
-- SOUP
-- SALAD
-
-### Season Specification
-- WINTER
-- SPRING
-- SUMMER
-- FALL
-
-### Time Specification
-- EASY
-- MODERATE
-- ELABORATE
-
-### Tags Specification
-- hearty
-- fancy
-- healthy
-- staple
-- vegetarian
-
-## API Reference
-- `POST /api/meals/add`
-- `GET /api/meals/all`
-- `GET /api/meals?season=SEASON`
-- `GET /api/meals?category=CATEGORY`
-- `GET /api/meals/recommended`
-- `GET /api/meals/random`

@@ -72,4 +72,5 @@ def random_meal():
 
 def run():
     app.run(debug=True, port=5000)
-    
+
+run()

@@ -1,5 +1,5 @@
 import sys
-from cli.cli import CLI
+# from cli.cli import CLI
 from api import api as API
 
 if __name__ == '__main__':
