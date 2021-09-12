@@ -6,13 +6,13 @@ Dinner Time is a recipe storage and retrieval API made to make meal planning eas
 ## 🙌 Planned Features
 - Add meals to a database
 - Get specific meal recomendations or query for one meal at a time
-- Get a smanu hopping list for the next X days
+- Get a menu and shopping list for the next X days
 - Smart recommendation and menu creation using data about each recipe
 
 ##  🔨 Stack
-- Python 3.8.0+
-- Flask
 - PostgreSQL
+- Typescript
+- Express
 - Heroku
 - Github
 

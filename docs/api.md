@@ -1,40 +1,13 @@
 # 🔧 API Documentation
 
-This is a simple REST api implementation. All body data should be sent like so.
-```typescript
-{
-    body: {
-        data: {}
-    }
-}
-```
+# Endpoints
 
-## Endpoints
-
-### `POST /api/meals`
-Body Data
-```typescript
-interface Meal {
-    name: string;
-    category?: string;
-    url?: string;
-    ingredients?: string[];
-    season?: string;
-}
-```
-
----
+## `/api/meals`
 ### `GET /api/meals`
-#### Parameters
-- ?season=string
-- ?category=string
-- ?ingredients=string,string...
+### `GET /api/meals?id=ID`
+### `POST /api/meals`
+### `PUT /api/meals?id=ID`
 
----
-### `GET /api/meals/recommended`
-
----
-### `GET /api/meals/random`
-
----
+## `/api/menu`
 ### `GET /api/menu`
+### `GET /api/menu?days=X`

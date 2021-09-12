@@ -1,0 +1,22 @@
+{
+  "name": "dinner-time",
+  "version": "1.0.0",
+  "description": "A resource for menu creation",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duncangrubbs/dinner-time.git"
+  },
+  "author": "duncan.grubbs@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duncangrubbs/dinner-time/issues"
+  },
+  "homepage": "https://github.com/duncangrubbs/dinner-time#readme"
+}

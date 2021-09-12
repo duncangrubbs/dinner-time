@@ -6,6 +6,8 @@ id SERIAL PRIMARY KEY,
 name VARCHAR (60) NOT NULL,
 season VARCHAR (30),
 category VARCHAR (30),
+main_ingredient VARCHAR (30),
+is_vegetarian BOOLEAN NOT NULL,
 ingredients TEXT [],
 url VARCHAR (30),
 last_suggested BIGINT NOT NULL

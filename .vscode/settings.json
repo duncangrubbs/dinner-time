@@ -2,5 +2,5 @@
   "python.pythonPath": "/Users/duncangrubbs/.pyenv/versions/3.8.0/bin/python",
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "block",
-  "editor.tabSize": "4",
+  "editor.tabSize": 4,
 }
