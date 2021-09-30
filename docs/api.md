@@ -3,11 +3,11 @@
 # Endpoints
 
 ## `/api/meals`
-### `GET /api/meals`
-### `GET /api/meals?id=ID`
-### `POST /api/meals`
-### `PUT /api/meals?id=ID`
+### `GET /meals`
+### `GET /meals?id=ID`
+### `POST /meals`
+### `PUT /meals?id=ID`
 
-## `/api/menu`
-### `GET /api/menu`
-### `GET /api/menu?days=X`
+## `/menu`
+### `GET /menu`
+### `GET /menu?days=X`

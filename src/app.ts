@@ -17,7 +17,7 @@ app.use(`/api/${config.version}`, endpoints);
 app.get('*', (req, res) => {
   res
     .status(404)
-    .send('Not an endpoint');
+    .send('Not Found');
 });
 
 export default app;

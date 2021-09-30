@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import RestController from '../types/RestController';
+import RestController from '../types/base.controller';
 
-export default class MealController implements RestController {
+export default class MenuController implements RestController {
   endpoint: string;
 
   name: string;
@@ -12,18 +12,18 @@ export default class MealController implements RestController {
   }
 
   get(req: Request, res: Response) {
-    res.status(200).send('GET /meals');
+    res.status(200).send('GET /menu');
   }
 
   post(req: Request, res: Response) {
-    res.status(200).send('POST /meals');
+    res.status(200).send('POST /menu');
   }
 
   put(req: Request, res: Response) {
-    res.status(200).send('PUT /meals');
+    res.status(200).send('PUT /menu');
   }
 
   delete(req: Request, res: Response) {
-    res.status(200).send('DELETE /meals');
+    res.status(200).send('DELETE /menu');
   }
 }
