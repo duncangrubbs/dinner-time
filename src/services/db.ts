@@ -22,7 +22,6 @@ class PostgreSQLDatabase {
   }
 
   connect() {
-    console.log('here');
     return new Pool({
       user: this.user,
       host: this.host,

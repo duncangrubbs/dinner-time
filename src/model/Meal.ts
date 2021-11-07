@@ -9,6 +9,8 @@ export default class Meal {
 
   isVegetarian: boolean;
 
+  season: string;
+
   ingredients: string[];
 
   url: string;
@@ -21,6 +23,7 @@ export default class Meal {
     category: string,
     mainIngredient: string,
     isVegetarian: boolean,
+    season: string,
     ingredients: string[],
     url: string,
     lastSuggested: Date,
@@ -30,6 +33,7 @@ export default class Meal {
     this.category = category;
     this.mainIngredient = mainIngredient;
     this.isVegetarian = isVegetarian;
+    this.season = season;
     this.ingredients = ingredients;
     this.url = url;
     this.lastSuggested = lastSuggested;

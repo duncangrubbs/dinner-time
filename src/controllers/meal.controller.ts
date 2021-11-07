@@ -1,6 +1,9 @@
 import { Request, Response } from 'express';
+import Meal from '../model/meal';
 import MealDao from '../model/meal.dao';
 import database from '../services/db';
+import extractPayload from '../services/extract-payload';
+import buildApiResponse from '../services/format-response';
 import RestController from '../types/base.controller';
 
 export default class MealController implements RestController {
@@ -14,22 +17,44 @@ export default class MealController implements RestController {
   }
 
   async get(req: Request, res: Response) {
-    // this isn't super efficient but I can't find a workaround
+    // TODO: find a better solution for this
     const dao = new MealDao(database.pool);
 
     const meals = await dao.getAllMeals();
-    res.status(200).json(meals);
+    // TODO: add standard response codes
+    res
+      .status(200)
+      .json(buildApiResponse('Success', meals));
   }
 
-  post(req: Request, res: Response) {
-    res.status(200).send('POST /meals');
+  async post(req: any, res: Response) {
+    const meals: Meal[] = extractPayload(req).meals;
+    const dao = new MealDao(database.pool);
+
+    for (let i = 0; i < meals.length; i += 1) {
+      await dao.addMeal(meals[i]);
+    }
+
+    res
+      .status(200)
+      .json(buildApiResponse('Success'));
   }
 
   put(req: Request, res: Response) {
     res.status(200).send('PUT /meals');
   }
 
-  delete(req: Request, res: Response) {
-    res.status(200).send('DELETE /meals');
+  async delete(req: Request, res: Response) {
+    const ids: number[] = extractPayload(req).ids;
+    const dao = new MealDao(database.pool);
+
+    for (let i = 0; i < ids.length; i += 1) {
+      await dao.deleteMeal(ids[i]);
+    }
+    
+
+    res
+      .status(200)
+      .json(buildApiResponse('Success'));
   }
 }

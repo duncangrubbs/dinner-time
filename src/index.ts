@@ -3,5 +3,5 @@ import config from './config';
 
 app.listen(
   config.port,
-  () => console.log('[INFO] Starting Server'),
+  () => console.log(`[INFO] Local server on ${config.port}`),
 );
