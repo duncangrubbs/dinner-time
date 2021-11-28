@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { ResponseCodes } from '../constants/ResponseCodes';
 import Meal from '../model/meal';
 import MealDao from '../model/meal.dao';
 import database from '../services/db';
@@ -21,9 +22,8 @@ export default class MealController implements RestController {
     const dao = new MealDao(database.pool);
 
     const meals = await dao.getAllMeals();
-    // TODO: add standard response codes
     res
-      .status(200)
+      .status(ResponseCodes.Success)
       .json(buildApiResponse('Success', meals));
   }
 
@@ -36,12 +36,12 @@ export default class MealController implements RestController {
     }
 
     res
-      .status(200)
+      .status(ResponseCodes.Success)
       .json(buildApiResponse('Success'));
   }
 
   put(req: Request, res: Response) {
-    res.status(200).send('PUT /meals');
+    res.status(ResponseCodes.Success).send('PUT /meals');
   }
 
   async delete(req: Request, res: Response) {
@@ -51,10 +51,9 @@ export default class MealController implements RestController {
     for (let i = 0; i < ids.length; i += 1) {
       await dao.deleteMeal(ids[i]);
     }
-    
 
     res
-      .status(200)
+      .status(ResponseCodes.Success)
       .json(buildApiResponse('Success'));
   }
 }

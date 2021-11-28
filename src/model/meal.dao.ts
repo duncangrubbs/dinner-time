@@ -11,7 +11,7 @@ export default class MealDao implements BaseDAO {
     this.database = database;
   }
 
-  async getAllMeals() {
+  async getAllMeals(): Promise<Meal[]> {
     return (await this.database.query(`SELECT * FROM ${this.table}`)).rows;
   }
 
