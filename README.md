@@ -16,4 +16,4 @@ Dinner Time is a recipe storage and retrieval API made to make meal planning eas
 - Heroku
 - Github
 
-You can take a look at the [API Docs](https://github.com/duncangrubbs/dinner-time/blob/master/docs/api.md) as well as the [Meal object specification](https://github.com/duncangrubbs/dinner-time/blob/master/docs/spec.md). Contributions are always welcome!
+You can take a look at the [Meal object specification](https://github.com/duncangrubbs/dinner-time/blob/master/docs/spec.md). Contributions are always welcome!

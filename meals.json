@@ -1,0 +1,148 @@
+[
+    {
+        "name": "Tacos",
+        "season": "ANY",
+        "category": "MEXICAN",
+        "ingredients": [
+            "Ground Turkey",
+            "Taco Seasoning",
+            "Tortillas",
+            "Cheese",
+            "Jalepenos",
+            "Guacamole"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Pesto Pasta + Veggies",
+        "season": "ANY",
+        "category": "ITALIAN",
+        "ingredients": [
+            "Chicken Breast",
+            "Zuchinni",
+            "Pesto",
+            "Pasta",
+            "Chili Flakes"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Hot Dogs",
+        "season": "SUMMER",
+        "category": "AMERICAN",
+        "ingredients": [
+            "Hot Dogs",
+            "Hot Dog Buns",
+            "Ketchup",
+            "Mustard",
+            "Pickles"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Grilled Cheese + Tomato Soup",
+        "season": "ANY",
+        "category": "AMERICAN",
+        "ingredients": [
+            "Bread",
+            "Tomato Soup",
+            "Cheese",
+            "Mustard"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Chicken Stir Fry",
+        "season": "ANY",
+        "category": "ASIAN",
+        "ingredients": [
+            "Chicken Breast",
+            "Bell Pepper",
+            "Broccoli",
+            "Rice",
+            "Chicken Stock",
+            "Garlic",
+            "Ginger",
+            "Chili Flakes",
+            "Rice Vinegar",
+            "Sesame Oil",
+            "Soy Sauce"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Cheese Steak",
+        "season": "WINTER",
+        "category": "AMERICAN",
+        "ingredients": [
+            "Steak",
+            "Roll",
+            "Provolone",
+            "Worcester Sauce"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Salad Nicoise",
+        "season": "SUMMER",
+        "category": "AMERICAN",
+        "ingredients": [
+            "Tuna",
+            "Mayo",
+            "Green Beans",
+            "Potatoes",
+            "Lettuce",
+            "Olives",
+            "Bell Pepper"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Turkey Burgers",
+        "season": "ANY",
+        "category": "AMERICAN",
+        "ingredients": [
+            "Ground Turkey",
+            "Red Onion",
+            "Mustard",
+            "Burger Buns",
+            "Cheese",
+            "Sriracha"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Chicken + Rice Pilaf + Veggies",
+        "season": "ANY",
+        "category": "AMERICAN",
+        "ingredients": [
+            "Chicken Breast",
+            "Rice Pilaf",
+            "Bell Pepper",
+            "Asparagus"
+        ],
+        "url": "",
+        "last_suggested": 0
+    },
+    {
+        "name": "Chicken Picatta",
+        "season": "WINTER",
+        "category": "ITALIAN",
+        "ingredients": [
+            "Chicken Breast",
+            "Flour",
+            "Butter",
+            "Capers"
+        ],
+        "url": "",
+        "last_suggested": 0
+    }
+]
