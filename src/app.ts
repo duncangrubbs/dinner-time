@@ -5,6 +5,7 @@ import cors from 'cors';
 import loggerOptions from './services/logger';
 import config from './config';
 import endpoints from './endpoints';
+import { ResponseCodes } from './constants/ResponseCodes';
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(`/api/${config.version}`, endpoints);
 
 app.get('*', (req, res) => {
   res
-    .status(404)
+    .status(ResponseCodes.NotFound)
     .send('Not Found');
 });
 
